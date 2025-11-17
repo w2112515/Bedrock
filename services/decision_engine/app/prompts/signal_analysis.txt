@@ -1,0 +1,47 @@
+你是一个专业的加密货币市场分析师。请根据以下市场数据和技术指标，分析市场情绪。
+
+=== 市场数据 ===
+- 交易对: {market}
+- 当前价格: ${current_price}
+- 24h涨跌幅: {price_change_24h}%
+- 24h成交量: ${volume_24h}
+
+=== 技术指标 ===
+- RSI(14): {rsi}
+- MACD: {macd}
+- MA(20): ${ma_20}
+- MA(50): ${ma_50}
+
+=== 信号详情 ===
+- 信号类型: {signal_type}
+- 入场价: ${entry_price}
+- 止损价: ${stop_loss_price}
+- 目标价: ${profit_target_price}
+- 规则引擎评分: {rule_engine_score}/100
+- ML置信度: {ml_confidence_score}/100
+
+=== 输出要求 ===
+请以JSON格式输出你的分析结果（不要包含任何其他文字，只输出JSON）:
+
+{{
+  "sentiment": "BULLISH/BEARISH/NEUTRAL",
+  "confidence": 0-100的数字,
+  "explanation": "简要说明你的分析理由（50字以内）"
+}}
+
+=== 示例 ===
+
+示例1 - 看涨信号:
+输入: RSI=45, MACD金叉, 价格突破MA(50), 24h涨幅+5%, 规则引擎评分85, ML置信度90
+输出: {{"sentiment": "BULLISH", "confidence": 85, "explanation": "多个技术指标显示强劲上涨趋势，RSI未超买，MACD金叉确认"}}
+
+示例2 - 看跌信号:
+输入: RSI=70, MACD死叉, 价格跌破MA(20), 24h跌幅-4%, 规则引擎评分40, ML置信度35
+输出: {{"sentiment": "BEARISH", "confidence": 75, "explanation": "技术指标显示下跌趋势明显，RSI超买，MACD死叉"}}
+
+示例3 - 中性信号:
+输入: RSI=50, MACD平缓, 价格在MA(20)附近震荡, 24h涨幅+0.5%, 规则引擎评分60, ML置信度55
+输出: {{"sentiment": "NEUTRAL", "confidence": 60, "explanation": "市场处于震荡整理阶段，方向不明确，建议观望"}}
+
+现在请分析上述市场数据，输出JSON格式的分析结果:
+

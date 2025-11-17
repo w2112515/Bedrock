@@ -1,0 +1,35 @@
+# FastAPI and ASGI server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.12.1
+
+# Redis
+redis==5.0.1
+
+# Data validation
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Configuration
+python-dotenv==1.0.0
+
+# Monitoring
+prometheus-client==0.19.0
+
+# Logging
+structlog==23.2.0
+
+# Utilities
+python-multipart==0.0.20
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+pytest-socket==0.6.0
+pytest-mock==3.12.0
+

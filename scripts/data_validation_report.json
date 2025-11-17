@@ -1,0 +1,92 @@
+[
+  {
+    "symbol": "BTCUSDT",
+    "interval": "1h",
+    "year": 2024,
+    "total_records": 8776,
+    "earliest": "2024-01-01T08:00:00",
+    "latest": "2024-12-31T23:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "interval": "1h",
+    "year": 2025,
+    "total_records": 508,
+    "earliest": "2025-01-01T00:00:00",
+    "latest": "2025-11-15T13:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "interval": "1h",
+    "year": 2024,
+    "total_records": 8776,
+    "earliest": "2024-01-01T08:00:00",
+    "latest": "2024-12-31T23:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "interval": "1h",
+    "year": 2025,
+    "total_records": 508,
+    "earliest": "2025-01-01T00:00:00",
+    "latest": "2025-11-15T13:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "BNBUSDT",
+    "interval": "1h",
+    "year": 2024,
+    "total_records": 8776,
+    "earliest": "2024-01-01T08:00:00",
+    "latest": "2024-12-31T23:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "BNBUSDT",
+    "interval": "1h",
+    "year": 2025,
+    "total_records": 7646,
+    "earliest": "2025-01-01T00:00:00",
+    "latest": "2025-11-15T13:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "interval": "1h",
+    "year": 2024,
+    "total_records": 8776,
+    "earliest": "2024-01-01T08:00:00",
+    "latest": "2024-12-31T23:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "interval": "1h",
+    "year": 2025,
+    "total_records": 7646,
+    "earliest": "2025-01-01T00:00:00",
+    "latest": "2025-11-15T13:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "ADAUSDT",
+    "interval": "1h",
+    "year": 2024,
+    "total_records": 8776,
+    "earliest": "2024-01-01T08:00:00",
+    "latest": "2024-12-31T23:00:00",
+    "status": "OK"
+  },
+  {
+    "symbol": "ADAUSDT",
+    "interval": "1h",
+    "year": 2025,
+    "total_records": 7646,
+    "earliest": "2025-01-01T00:00:00",
+    "latest": "2025-11-15T13:00:00",
+    "status": "OK"
+  }
+]

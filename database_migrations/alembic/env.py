@@ -16,11 +16,14 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../.
 from shared.utils.database import Base
 
 # Import all service models here
-# Phase 0: No models yet
-# Phase 1: Will import DataHub, DecisionEngine, Portfolio models
-# Example:
-# from services.datahub.app.models import KLine
-# from services.decision_engine.app.models import Signal
+# Phase 1: DataHub models
+from services.datahub.app.models import KLine, OnChainMetrics
+
+# Phase 1: DecisionEngine models
+from services.decision_engine.app.models.signal import Signal
+from services.decision_engine.app.models.arbitration_config import ArbitrationConfig
+
+# Phase 1: Portfolio models (to be added)
 # from services.portfolio.app.models import Position
 
 # this is the Alembic Config object, which provides

@@ -28,6 +28,28 @@ class BedrockException(Exception):
         }
 
 
+class BaseServiceException(BedrockException):
+    """
+    Base exception class for service-specific exceptions.
+    Extends BedrockException with HTTP status code support.
+    """
+    def __init__(
+        self,
+        message: str,
+        error_code: Optional[str] = None,
+        details: Optional[dict] = None,
+        status_code: int = 500
+    ):
+        super().__init__(message, error_code, details)
+        self.status_code = status_code
+
+    def to_dict(self) -> dict:
+        """Convert exception to dictionary for API responses."""
+        result = super().to_dict()
+        result["status_code"] = self.status_code
+        return result
+
+
 class ValidationError(BedrockException):
     """
     Raised when input validation fails.

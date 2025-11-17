@@ -298,20 +298,22 @@ $RECYCLE.BIN/
 # ============================================
 # Project-Specific
 # ============================================
-# ML Models
+# ML Models (large binary files)
 *.pkl
 *.h5
 *.pt
 *.pth
 *.onnx
+*.joblib
 models/
 mlruns/
 
-# Data files
+# Data files (large data files)
 data/
 *.csv
 *.parquet
 *.feather
+*.arrow
 
 # Temporary files
 tmp/
@@ -321,12 +323,16 @@ temp/
 # Backup files
 *.bak
 *.backup
+backups/
+backups_*/
 
 # API Keys and Secrets
 secrets/
 *.key
 *.pem
 *.crt
+*.p12
+*.pfx
 
 # Performance test results
 locust-report.html
@@ -343,6 +349,61 @@ docs/.doctrees/
 # Alembic
 # Keep alembic.ini and migrations, but ignore generated files
 database_migrations/alembic/versions/*.pyc
+
+# ============================================
+# Project Documentation (Internal/Sensitive)
+# ============================================
+# 项目规划文档（包含内部信息，不公开）
+2.md
+3.md
+加密货币交易平台任务规划*.md
+tasks_hierarchy.json
+
+# 内部报告和分析文档
+docs/*REPORT*.md
+docs/*ANALYSIS*.md
+docs/DATA_COLLECTION_REPORT*.md
+docs/DEVELOPMENT_STATUS*.md
+docs/VERIFICATION_SUMMARY*.md
+docs/BASELINE_METRICS*.md
+docs/FUNDING_RATE_DATA_VERIFICATION*.md
+docs/ONCHAIN_DATA_ALPHA_ANALYSIS*.md
+
+# 根目录下的验证和状态报告（临时文档）
+*VERIFICATION*.md
+*REPORT*.md
+*STATUS*.md
+PYTHON_VERSION_UPGRADE_GUIDE.md
+QWEN_API_KEY_GUIDE.md
+*CHECKLIST*.md
+POWERSHELL_SYNTAX_FIX.md
+
+# 任务和待办事项
+TODO.md
+TASKS.md
+*.todo
+
+# 个人笔记
+notes/
+*.notes
+NOTES.md
+
+# 测试脚本和临时脚本（根目录）
+test_*.py
+test_*.ps1
+check_*.py
+check_*.ps1
+debug_*.py
+fix_*.ps1
+collect_*.ps1
+monitor_*.ps1
+quick_*.ps1
+verify_*.ps1
+
+# 基线数据和测试结果
+baseline_*.txt
+baseline_*.json
+*_baseline_*.json
 
 # ============================================
 # Keep These Files

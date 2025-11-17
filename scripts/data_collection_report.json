@@ -1,0 +1,730 @@
+{
+  "start_time": "2025-11-15T13:22:54.981945",
+  "end_time": "2025-11-15T13:26:18.269425",
+  "total_tasks": 72,
+  "completed_tasks": 72,
+  "failed_tasks": 0,
+  "total_records": 0,
+  "tasks": [
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 1,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 2,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 3,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 4,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 5,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 6,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 7,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 8,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 9,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 10,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 11,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 12,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 1,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 2,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 3,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 4,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 5,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 6,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 7,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 8,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 9,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 10,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 11,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 12,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 1,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 2,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 3,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 4,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 5,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 6,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 7,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 8,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 9,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 10,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 11,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 12,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 1,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 2,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 3,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 4,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 5,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 6,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 7,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 8,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 9,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 10,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": "500 Server Error: Internal Server Error for url: http://localhost:8001/v1/klines/collect",
+      "attempts": 2
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 11,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 12,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 1,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 2,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 3,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 4,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 5,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 6,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 7,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 8,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 9,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 10,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 11,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2024,
+      "month": 12,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 1,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 2,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 3,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 4,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 5,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 6,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 7,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 8,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 9,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 10,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 11,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    },
+    {
+      "symbol": "ADAUSDT",
+      "interval": "1h",
+      "year": 2025,
+      "month": 12,
+      "status": "SUCCESS",
+      "records_collected": 0,
+      "error_message": null,
+      "attempts": 1
+    }
+  ]
+}

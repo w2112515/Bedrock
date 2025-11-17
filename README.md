@@ -15,12 +15,20 @@ Project Bedrock is an intelligent cryptocurrency trading decision platform that 
 
 ### Technology Stack
 
-- **Backend**: Python 3.11+, FastAPI 0.104.1, SQLAlchemy 2.0.23
+- **Backend**: Python **3.12.12** ⭐, FastAPI 0.104.1, SQLAlchemy 2.0.23
 - **Database**: PostgreSQL 16, Redis 7
 - **Frontend**: React 18.2.0, TypeScript, Ant Design 5.11.0
-- **ML/AI**: XGBoost 2.0.2, Qwen LLM API
+- **ML/AI**:
+  - XGBoost **2.1.4** ⭐
+  - scikit-learn **1.5.2** ⭐
+  - numpy **2.2.6** ⭐
+  - pandas **2.3.2** ⭐
+  - pandas-ta 0.4.71b0
+  - Qwen LLM API (dashscope 1.14.0)
 - **Infrastructure**: Docker, Docker Compose, Kubernetes
 - **Monitoring**: Prometheus, Grafana
+
+**⭐ Updated**: 2025-11-12 - Upgraded to Python 3.12 and numpy 2.x compatible ML stack
 
 ## 🏗️ Architecture
 
@@ -45,7 +53,7 @@ Services communicate via Redis Pub/Sub:
 
 - Docker 20.10+
 - Docker Compose 2.0+
-- Python 3.11+
+- Python **3.12+** ⭐
 - Node.js 18+
 - Git 2.x+
 
@@ -128,15 +136,19 @@ locust -f tests/performance/locustfile.py --host=http://localhost:8001
 - Shared libraries
 - Documentation
 
-### Phase 1: MVP Development (4-6 weeks) 🚧
-- DataHub, DecisionEngine, Portfolio services
-- Basic frontend
-- Rule-based signal generation
+### Phase 1: MVP Development (4-6 weeks) ✅
+- DataHub, DecisionEngine, Portfolio services (100% complete)
+- Basic frontend (90% complete)
+- Rule-based signal generation (100% complete)
+- Event-driven architecture (Redis Pub/Sub)
 
-### Phase 2: AI Integration (6-8 weeks)
-- ML model integration
-- LLM sentiment analysis
-- Backtesting engine
+### Phase 2: AI Integration (6-8 weeks) ⏳ 40% Complete
+- ✅ ML model integration (XGBoost, 94.33% accuracy) - **Completed 2025-11-11**
+- ✅ LLM sentiment analysis (Qwen API, Redis cache) - **Completed 2025-11-12**
+- ✅ Python 3.12 + numpy 2.x dependency upgrade - **Completed 2025-11-12**
+- ⏳ Decision arbitration (Rule + ML + LLM fusion) - **In Progress**
+- ⏸️ Backtesting engine - **Pending**
+- ⏸️ Frontend enhancements - **Pending**
 
 ### Phase 3: Production Readiness (5-7 weeks)
 - MLOps automation

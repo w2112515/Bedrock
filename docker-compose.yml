@@ -35,6 +35,270 @@ services:
     networks:
       - bedrock_network
 
+  datahub:
+    build:
+      context: .
+      dockerfile: services/datahub/Dockerfile
+    container_name: projectbedrock_datahub
+    environment:
+      # Database
+      DATABASE_URL: postgresql://${POSTGRES_USER:-bedrock}:${POSTGRES_PASSWORD:-bedrock_password}@postgres:5432/${POSTGRES_DB:-bedrock_db}
+      # Redis
+      REDIS_URL: redis://redis:6379/0
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      # Service
+      DATAHUB_PORT: ${DATAHUB_PORT:-8001}
+      # External APIs
+      BINANCE_API_KEY: ${BINANCE_API_KEY:-}
+      BINANCE_API_SECRET: ${BINANCE_API_SECRET:-}
+      BITQUERY_API_KEY: ${BITQUERY_API_KEY:-}
+    ports:
+      - "${DATAHUB_PORT:-8001}:8001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - bedrock_network
+    volumes:
+      - ./services/datahub:/app/services/datahub
+      - ./shared:/app/shared
+      - ./database_migrations:/app/database_migrations
+
+  decision_engine:
+    build:
+      context: .
+      dockerfile: services/decision_engine/Dockerfile
+    container_name: projectbedrock_decision_engine
+    environment:
+      # Database
+      DATABASE_URL: postgresql://${POSTGRES_USER:-bedrock}:${POSTGRES_PASSWORD:-bedrock_password}@postgres:5432/${POSTGRES_DB:-bedrock_db}
+      # Redis
+      REDIS_URL: redis://redis:6379/0
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      # Service
+      DECISION_ENGINE_PORT: ${DECISION_ENGINE_PORT:-8002}
+      # DataHub
+      DATAHUB_BASE_URL: http://datahub:8001
+      # Scheduler
+      SIGNAL_GENERATION_INTERVAL_MINUTES: ${SIGNAL_GENERATION_INTERVAL_MINUTES:-60}
+      # Market Filter (lower threshold for testing)
+      MIN_TREND_SCORE: ${MIN_TREND_SCORE:-30.0}
+      # Rule Engine (lower threshold for testing arbitration)
+      MIN_RULE_ENGINE_SCORE: ${MIN_RULE_ENGINE_SCORE:-30.0}
+      # Pullback Strategy (relaxed tolerance for testing)
+      PULLBACK_TOLERANCE: ${PULLBACK_TOLERANCE:-0.05}
+      # Events
+      SIGNAL_CREATED_CHANNEL: ${SIGNAL_CREATED_CHANNEL:-signal.created}
+      # ML Model Configuration (Phase 2)
+      ML_ENABLED: ${ML_ENABLED:-true}
+      ML_MODEL_VERSION: ${ML_MODEL_VERSION:-v1}  # v1/v2_6/v2_7
+      ML_MODEL_PATH: ${ML_MODEL_PATH:-services/decision_engine/models/xgboost_signal_confidence_v1.pkl}
+      ML_FEATURE_NAMES_PATH: ${ML_FEATURE_NAMES_PATH:-services/decision_engine/models/feature_names.json}
+      ML_FALLBACK_SCORE: ${ML_FALLBACK_SCORE:-50.0}
+      # LLM Configuration (Phase 2)
+      LLM_ENABLED: ${LLM_ENABLED:-true}
+      LLM_PROVIDER: ${LLM_PROVIDER:-qwen}
+      QWEN_API_KEY: ${QWEN_API_KEY:-}
+      QWEN_API_URL: ${QWEN_API_URL:-https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation}
+      QWEN_MODEL: ${QWEN_MODEL:-qwen-turbo}
+      QWEN_TIMEOUT: ${QWEN_TIMEOUT:-30.0}
+      QWEN_TEMPERATURE: ${QWEN_TEMPERATURE:-0.2}
+      LLM_CACHE_TTL: ${LLM_CACHE_TTL:-900}
+      LLM_ENABLE_CACHE: ${LLM_ENABLE_CACHE:-true}
+      # Arbiter Configuration (Phase 2)
+      ARBITER_RULE_WEIGHT: ${ARBITER_RULE_WEIGHT:-0.4}
+      ARBITER_ML_WEIGHT: ${ARBITER_ML_WEIGHT:-0.3}
+      ARBITER_LLM_WEIGHT: ${ARBITER_LLM_WEIGHT:-0.3}
+      ARBITER_MIN_APPROVAL_SCORE: ${ARBITER_MIN_APPROVAL_SCORE:-70.0}
+      LLM_SENTIMENT_BULLISH_BASE: ${LLM_SENTIMENT_BULLISH_BASE:-90.0}
+      LLM_SENTIMENT_NEUTRAL_BASE: ${LLM_SENTIMENT_NEUTRAL_BASE:-50.0}
+      LLM_SENTIMENT_BEARISH_BASE: ${LLM_SENTIMENT_BEARISH_BASE:-10.0}
+      LLM_SENTIMENT_CONFIDENCE_MULTIPLIER: ${LLM_SENTIMENT_CONFIDENCE_MULTIPLIER:-0.2}
+      # Funding Rate Strategy Configuration (Phase 2)
+      FUNDING_RATE_ENABLED: ${FUNDING_RATE_ENABLED:-false}
+      FUNDING_RATE_HIGH_THRESHOLD: ${FUNDING_RATE_HIGH_THRESHOLD:-0.001}
+      FUNDING_RATE_LOW_THRESHOLD: ${FUNDING_RATE_LOW_THRESHOLD:--0.001}
+      FUNDING_RATE_CACHE_TTL: ${FUNDING_RATE_CACHE_TTL:-28800}
+    ports:
+      - "${DECISION_ENGINE_PORT:-8002}:8002"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      datahub:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - bedrock_network
+    volumes:
+      - ./services/decision_engine:/app/services/decision_engine
+      - ./shared:/app/shared
+      - ./database_migrations:/app/database_migrations
+
+  portfolio:
+    build:
+      context: .
+      dockerfile: services/portfolio/Dockerfile
+    container_name: projectbedrock_portfolio
+    environment:
+      # Database
+      DATABASE_URL: postgresql://${POSTGRES_USER:-bedrock}:${POSTGRES_PASSWORD:-bedrock_password}@postgres:5432/${POSTGRES_DB:-bedrock_db}
+      # Redis
+      REDIS_URL: redis://redis:6379/0
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      # Service
+      PORTFOLIO_PORT: ${PORTFOLIO_PORT:-8003}
+      # Account
+      INITIAL_BALANCE: ${INITIAL_BALANCE:-100000.00}
+      DEFAULT_RISK_PER_TRADE: ${DEFAULT_RISK_PER_TRADE:-0.02}
+      MAX_POSITION_WEIGHT: ${MAX_POSITION_WEIGHT:-1.0}
+      # Trading
+      COMMISSION_RATE: ${COMMISSION_RATE:-0.001}
+      SLIPPAGE_RATE: ${SLIPPAGE_RATE:-0.0005}
+      ENABLE_AUTO_CLOSE: ${ENABLE_AUTO_CLOSE:-false}
+      # Events
+      SIGNAL_CREATED_CHANNEL: ${SIGNAL_CREATED_CHANNEL:-signal.created}
+      PORTFOLIO_UPDATED_CHANNEL: ${PORTFOLIO_UPDATED_CHANNEL:-portfolio.updated}
+      POSITION_CLOSED_CHANNEL: ${POSITION_CLOSED_CHANNEL:-position.closed}
+    ports:
+      - "${PORTFOLIO_PORT:-8003}:8003"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - bedrock_network
+    volumes:
+      - ./services/portfolio:/app/services/portfolio
+      - ./shared:/app/shared
+      - ./database_migrations:/app/database_migrations
+
+  backtesting:
+    build:
+      context: .
+      dockerfile: services/backtesting/Dockerfile
+    container_name: projectbedrock_backtesting
+    environment:
+      # Database
+      DATABASE_URL: postgresql://${POSTGRES_USER:-bedrock}:${POSTGRES_PASSWORD:-bedrock_password}@postgres:5432/${POSTGRES_DB:-bedrock_db}
+      # Redis
+      REDIS_URL: redis://redis:6379/0
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      # Celery
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+      # Service
+      BACKTESTING_PORT: ${BACKTESTING_PORT:-8004}
+      # DataHub
+      DATAHUB_URL: ${DATAHUB_URL:-http://datahub:8001}
+      # Backtest defaults
+      DEFAULT_COMMISSION_RATE: ${DEFAULT_COMMISSION_RATE:-0.001}
+      DEFAULT_SLIPPAGE_RATE: ${DEFAULT_SLIPPAGE_RATE:-0.0005}
+      DEFAULT_INITIAL_BALANCE: ${DEFAULT_INITIAL_BALANCE:-100000.00}
+    ports:
+      - "${BACKTESTING_PORT:-8004}:8004"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      datahub:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - bedrock_network
+    volumes:
+      - ./services/backtesting:/app/services/backtesting
+      - ./services/portfolio:/app/services/portfolio
+      - ./services/decision_engine:/app/services/decision_engine
+      - ./shared:/app/shared
+      - ./database_migrations:/app/database_migrations
+
+  celery_worker:
+    build:
+      context: .
+      dockerfile: services/backtesting/Dockerfile
+    container_name: projectbedrock_celery_worker
+    command: celery -A services.backtesting.app.tasks.celery_app worker --loglevel=info
+    environment:
+      # Database
+      DATABASE_URL: postgresql://${POSTGRES_USER:-bedrock}:${POSTGRES_PASSWORD:-bedrock_password}@postgres:5432/${POSTGRES_DB:-bedrock_db}
+      # Redis
+      REDIS_URL: redis://redis:6379/0
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      # Celery
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+      # DataHub
+      DATAHUB_URL: ${DATAHUB_URL:-http://datahub:8001}
+      # Backtest defaults
+      DEFAULT_COMMISSION_RATE: ${DEFAULT_COMMISSION_RATE:-0.001}
+      DEFAULT_SLIPPAGE_RATE: ${DEFAULT_SLIPPAGE_RATE:-0.0005}
+      DEFAULT_INITIAL_BALANCE: ${DEFAULT_INITIAL_BALANCE:-100000.00}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - bedrock_network
+    volumes:
+      - ./services/backtesting:/app/services/backtesting
+      - ./services/portfolio:/app/services/portfolio
+      - ./services/decision_engine:/app/services/decision_engine
+      - ./shared:/app/shared
+      - ./database_migrations:/app/database_migrations
+
+  webapp:
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    container_name: projectbedrock_webapp
+    ports:
+      - "3000:80"
+    depends_on:
+      datahub:
+        condition: service_healthy
+      decision_engine:
+        condition: service_healthy
+      portfolio:
+        condition: service_healthy
+      backtesting:
+        condition: service_healthy
+    networks:
+      - bedrock_network
+
 volumes:
   postgres_data:
     driver: local
