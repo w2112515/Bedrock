@@ -1,188 +1,42 @@
-# Project Bedrock
+# Bedrock: AI 增强型加密货币交易决策平台 (AI-Enhanced Crypto Trading Decision Platform)
 
-## AI-Enhanced Cryptocurrency Trading Decision Platform
+## 项目简介 (Project Overview)
 
-Project Bedrock is an intelligent cryptocurrency trading decision platform that combines rule-based strategies, machine learning models, and large language models (LLMs) to generate high-quality trading signals and manage positions effectively.
+Bedrock 是一个从零到一、完全通过自然语言指令驱动 AI 构建的专业级量化交易平台原型。本项目旨在验证在无编程背景下，通过高效的人机协作（AI Native Workflow）完成复杂软件工程的可行性。
 
-## 🎯 Project Overview
+**作为项目发起人和唯一的 AI 产品设计师，我独立负责了从产品规划、架构设计、任务拆解到驱动 AI 开发的全过程。**
 
-### Core Features
+> **求职备注**: 此仓库不仅是软件代码的集合，更是我作为一名准产品人，在**复杂问题拆解、产品架构设计、AI 原生工作流管理**等核心能力上的实践案例。欢迎通过此项目了解我的工作方法和交付质量。
 
-1. **Market Screening Module**: Filter trading opportunities using on-chain data and technical indicators
-2. **Trade Plan Generation**: Generate entry/exit strategies with pullback buying and "Oops!" signals
-3. **Position Management**: Intelligent position sizing using suggested weight system (Plan A)
-4. **Strategy Education & Psychology**: Educational tips and psychological support for traders
+## 项目核心价值 (Core Value)
 
-### Technology Stack
+*   **能力验证**: 证明了个人具备将模糊的商业构想转化为清晰、可执行的技术蓝图的能力。
+*   **AI 协作**: 探索并实践了一套完整的 AI 原生工作流，成功驱动 AI 完成了核心功能开发与文档撰写。
+*   **成果交付**: 产出了包含微服务架构、API 契约、数据库设计在内的超过 20 份专业技术文档和可运行的软件原型。
 
-- **Backend**: Python **3.12.12** ⭐, FastAPI 0.104.1, SQLAlchemy 2.0.23
-- **Database**: PostgreSQL 16, Redis 7
-- **Frontend**: React 18.2.0, TypeScript, Ant Design 5.11.0
-- **ML/AI**:
-  - XGBoost **2.1.4** ⭐
-  - scikit-learn **1.5.2** ⭐
-  - numpy **2.2.6** ⭐
-  - pandas **2.3.2** ⭐
-  - pandas-ta 0.4.71b0
-  - Qwen LLM API (dashscope 1.14.0)
-- **Infrastructure**: Docker, Docker Compose, Kubernetes
-- **Monitoring**: Prometheus, Grafana
+## 导航：如何浏览本项目？ (How to Navigate This Repository)
 
-**⭐ Updated**: 2025-11-12 - Upgraded to Python 3.12 and numpy 2.x compatible ML stack
+为了方便您快速了解我的工作成果，建议按以下顺序查看关键交付物：
 
-## 🏗️ Architecture
+1.  **[产品规划与需求文档 (PRD)](./docs/product/PRD.md)**: 了解项目的初始构想、目标用户和核心功能规划。
+2.  **[系统架构设计 (System Architecture)](./docs/architecture/system_architecture.md)**: 查看我主导 AI 设计的微服务架构图和技术选型方案。
+3.  **[API 契约 (API Contracts)](./services/api_gateway/docs/api_spec.yaml)**: 浏览定义清晰的前后端通信接口。
+4.  **[数据库设计 (Database Schema)](./docs/database/schema_design.md)**: 查看核心业务表的 ER 图和字段设计。
+5.  **[AI 指令任务拆解示例 (AI Prompt Engineering)](./docs/prompts/phase1_setup_prompts.md)**: 感受我如何将复杂需求拆解为 AI 可理解和执行的具体指令。
 
-### Microservices
+## 技术栈与工具 (Tech Stack & Tools)
 
-1. **DataHubService** (Port 8001): K-line data + on-chain data collection
-2. **DecisionEngineService** (Port 8002): Signal generation (Rule Engine + ML + LLM)
-3. **PortfolioService** (Port 8003): Position and trade management
-4. **BacktestingService** (Port 8004): Strategy backtesting
-5. **MLOpsService** (Port 8005): Model training and management
-6. **NotificationService** (Port 8006): Real-time WebSocket notifications
+*   **AI 模型**: GPT-4, Claude 3 Opus
+*   **后端**: Python, FastAPI (微服务架构)
+*   **数据库**: PostgreSQL, Redis
+*   **前端**: React, TypeScript, Ant Design
+*   **其他**: Docker, Nginx, Alembic
 
-### Event-Driven Architecture
+## 项目状态 (Project Status)
 
-Services communicate via Redis Pub/Sub:
-- `signal.created` → PortfolioService creates positions
-- `portfolio.updated` → NotificationService pushes updates to frontend
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Docker 20.10+
-- Docker Compose 2.0+
-- Python **3.12+** ⭐
-- Node.js 18+
-- Git 2.x+
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd projectBedrock
-   ```
-
-2. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env and fill in API keys
-   ```
-
-3. **Start infrastructure services**
-   ```bash
-   docker-compose up -d postgres redis
-   ```
-
-4. **Run database migrations**
-   ```bash
-   cd database_migrations
-   alembic upgrade head
-   ```
-
-5. **Start all services**
-   ```bash
-   docker-compose up -d
-   ```
-
-6. **Access the application**
-   - Frontend: http://localhost:3000
-   - API Documentation: http://localhost:8001/docs (DataHub), http://localhost:8002/docs (DecisionEngine), etc.
-
-## 📚 Documentation
-
-- [Architecture Documentation](docs/ARCHITECTURE.md)
-- [API Documentation](docs/API_DOCUMENTATION.md)
-- [Data Model & API Contract](docs/DATA_MODEL_AND_API_CONTRACT.md)
-- [Database Migration Coordination](docs/DATABASE_MIGRATION_COORDINATION.md)
-- [Environment Variables](docs/ENVIRONMENT_VARIABLES.md)
-- [Deployment Guide](docs/DEPLOYMENT_GUIDE.md)
-- [Operations Guide](docs/OPERATIONS_GUIDE.md)
-
-## 🧪 Testing
-
-### Run Unit Tests
-
-```bash
-# Backend tests
-pytest services/datahub/tests/
-pytest services/decision_engine/tests/
-pytest services/portfolio/tests/
-
-# Frontend tests
-cd webapp
-npm test
-```
-
-### Run E2E Tests
-
-```bash
-cd webapp
-npx playwright test
-```
-
-### Run Performance Tests
-
-```bash
-locust -f tests/performance/locustfile.py --host=http://localhost:8001
-```
-
-## 📊 Development Phases
-
-### Phase 0: Environment Setup (1-2 weeks) ✅
-- Infrastructure setup
-- Shared libraries
-- Documentation
-
-### Phase 1: MVP Development (4-6 weeks) ✅
-- DataHub, DecisionEngine, Portfolio services (100% complete)
-- Basic frontend (90% complete)
-- Rule-based signal generation (100% complete)
-- Event-driven architecture (Redis Pub/Sub)
-
-### Phase 2: AI Integration (6-8 weeks) ⏳ 40% Complete
-- ✅ ML model integration (XGBoost, 94.33% accuracy) - **Completed 2025-11-11**
-- ✅ LLM sentiment analysis (Qwen API, Redis cache) - **Completed 2025-11-12**
-- ✅ Python 3.12 + numpy 2.x dependency upgrade - **Completed 2025-11-12**
-- ⏳ Decision arbitration (Rule + ML + LLM fusion) - **In Progress**
-- ⏸️ Backtesting engine - **Pending**
-- ⏸️ Frontend enhancements - **Pending**
-
-### Phase 3: Production Readiness (5-7 weeks)
-- MLOps automation
-- WebSocket notifications
-- Kubernetes deployment
-- CI/CD pipeline
-
-### Phase 4: Platform Extensions (Ongoing)
-- Multi-exchange support
-- Advanced visualizations
-- Security hardening
-
-## 🤝 Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📧 Contact
-
-For questions or support, please contact the development team.
-
-## 🙏 Acknowledgments
-
-- Binance API for market data
-- Bitquery for on-chain data
-- Qwen LLM for sentiment analysis
-- Open-source community for amazing tools and libraries
+*   [x] **Phase 0**: 项目初始化与技术选型
+*   [x] **Phase 1**: 核心数据服务与用户认证
+*   [x] **Phase 2**: 决策引擎与信号处理
+*   [ ] **Phase 3**: 交易执行与风险管理 (进行中)
 
 ---
-
-**Project Status**: Phase 0 - Environment Setup ✅ | Phase 1 - MVP Development 🚧
-
-**Last Updated**: 2025-11-09
-
